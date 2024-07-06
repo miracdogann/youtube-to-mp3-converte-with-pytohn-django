@@ -1,0 +1,132 @@
+/* Genel stil ayarları */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ana container stil ayarları */
+.ana {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    background-color: #f0f0f0;
+}
+
+.form {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15%;
+}
+
+h2 {
+    display: flex;
+    position: relative;
+    font-size: 2.8rem;
+    margin-bottom:15%;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.4s ease-in-out;
+}
+
+.input-box:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.input-box::placeholder {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.input-box:focus::placeholder {
+    opacity: 0;
+}
+
+.input-container::before, .input-container::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(45deg, #ff0040, #ff8c00, #ff0, #0f0, #00f, #4b0082, #8b00ff);
+    background-size: 200%;
+    animation: animate 2s linear infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+.input-container::before {
+    top: -5px;
+    left: -5px;
+}
+
+.input-container::after {
+    bottom: -5px;
+    right: -5px;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.input-box:focus ~ .input-container::before, 
+.input-box:focus ~ .input-container::after {
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+} 
+
+.btn {
+    outline: 0;
+    background: #FF90E8;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: all .14s ease-out;
+    margin-left: 10px; /* Buton ile input arasına boşluk bırakır */
+}
+
+.btn:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px,-4px);
+}
+
+.btn:focus-visible {
+    outline-offset: 1px;
+}
+
+/* Footer stil ayarları */
+footer {
+    background-color: #333; /* Arka plan rengi */
+    color: #fff; /* Metin rengi */
+    padding: 20px 0; /* Yatay iç kenar boşluğu */
+    text-align: center; /* Metin hizalaması */
+    position: fixed; /* Sabit olarak en altta kalmasını sağlar */
+    bottom: 0; /* Sayfanın en altına hizalanır */
+    width: 100%; /* Tam sayfa genişliği */
+}
+
+.devop {
+    font-size: 14px; /* Metin boyutu */
+}
